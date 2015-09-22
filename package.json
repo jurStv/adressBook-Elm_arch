@@ -1,0 +1,19 @@
+{
+  "name": "adressbook",
+  "version": "1.0.0",
+  "description": "adress book using Elm architecture",
+  "main": "js/app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jurStv/adressBook-Elm_arch.git"
+  },
+  "author": "jurStv",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jurStv/adressBook-Elm_arch/issues"
+  },
+  "homepage": "https://github.com/jurStv/adressBook-Elm_arch#readme"
+}
