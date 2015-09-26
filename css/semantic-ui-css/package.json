@@ -1,0 +1,46 @@
+{
+  "name": "semantic-ui-css",
+  "version": "2.1.4",
+  "title": "Semantic UI",
+  "description": "CSS Only distribution of Semantic UI",
+  "homepage": "http://www.semantic-ui.com",
+  "author": {
+    "name": "Jack Lukic",
+    "email": "jack@semantic-ui.com"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/Semantic-Org/Semantic-UI-CSS.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Semantic-Org/Semantic-UI/issues"
+  },
+  "dependencies": {
+    "jquery": "x.*"
+  },
+  "gitHead": "7d0fca4bf4cae2e9cbe13ba8a1d0f9a8d0e33ac7",
+  "_id": "semantic-ui-css@2.1.4",
+  "scripts": {},
+  "_shasum": "e734ad9be267dde11396b2ce85590860cd43e32a",
+  "_from": "semantic-ui-css@>=2.1.4 <3.0.0",
+  "_npmVersion": "2.11.3",
+  "_nodeVersion": "0.12.7",
+  "_npmUser": {
+    "name": "semantic-bot",
+    "email": "bot@semantic-ui.com"
+  },
+  "dist": {
+    "shasum": "e734ad9be267dde11396b2ce85590860cd43e32a",
+    "tarball": "http://registry.npmjs.org/semantic-ui-css/-/semantic-ui-css-2.1.4.tgz"
+  },
+  "maintainers": [
+    {
+      "name": "semantic-bot",
+      "email": "bot@semantic-ui.com"
+    }
+  ],
+  "directories": {},
+  "_resolved": "https://registry.npmjs.org/semantic-ui-css/-/semantic-ui-css-2.1.4.tgz",
+  "readme": "ERROR: No README data found!"
+}
