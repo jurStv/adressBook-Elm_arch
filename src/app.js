@@ -88,15 +88,13 @@ const view = R.curry((actions$, model) => {
       remove$: forwardTo(actions$, R.always(Action.Remove(adr._id)))
     }, adr, editing &&  editing === adr._id ? ".disabled" : "") );
   return h("div.ui.grid.container",[
-    h("h2.ui.row.center.aligned.icon.header", [ h("i.users.icon"), "Adress Book" ]),
-    h("div.ui.divided.grid.row",[
+    h("div.ui.grid.row",[
         h("div.five.wide.column", [
             filter,
             mainForm
           ]),
         h("div.eleven.wide.column", [
-            h("h4.ui.header", [h("i.table.icon"),h("div.content","Contact List")]),
-            h("div.ui.horizontal.divider"),
+            h("h2.ui.center.aligned.icon.header", [ h("i.users.icon"), "Adress Book" ]),
             h("table.ui.basic.selectable.single.line.table",
               [h("thead", [ h("tr", [
                   h("th", "First Name"),
