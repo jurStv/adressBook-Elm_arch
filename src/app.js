@@ -34,6 +34,9 @@ const sync = (model, storeName = 'adress-book') => {
   return model;
 }
 
+const log = el => {console.log(el); return el;}
+const emptify = (list) => list.forEach( c => c.value = "")
+
 // Update
 
 const Action = Type({
@@ -67,9 +70,12 @@ const SubAction = Type({
 });
 const subUpdate =  SubAction.caseOn({
   SubmitForm: (action, model) => {
-    let data = adressForm.update(action, model);
-    return isFormWrongBool(data) ? Action.Errorify([data, makeErrorObject(data)]) :
-      model.editing.length === 0 ? Action.Add(data) : Action.Modify(model.editing[0], data)
+    let {context, data} = adressForm.update(action, model);
+    return isFormWrongBool(data) ?
+      Action.Errorify([data, makeErrorObject(data)]) :
+        model.editing.length === 0 ?
+          ( emptify(context) , Action.Add(data) ) :
+            Action.Modify(model.editing[0], data)
   }
 });
 
@@ -114,7 +120,7 @@ const view = R.curry((actions$, model) => {
 const actions$ = flyd.stream();
 const model$ = flyd.scan(R.flip(update), init(), actions$);
 const vnode$ = flyd.map(view(actions$), model$);
-//flyd.map((model) => console.log(model), model$);
+//flyd.map((node) => console.log(node), vnode$);
 
 window.addEventListener('DOMContentLoaded', function() {
   const container = document.getElementById('app');

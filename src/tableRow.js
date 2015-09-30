@@ -18,7 +18,7 @@ const update = Action.caseOn({
 
 // view
 
-const view = ({edit$, remove$}, item, disabled = "") => h(`tr.${item._id}${disabled}`,{props: {key: item._id}}, [
+const view = ({edit$, remove$}, item, disabled = "") => h(`tr.${item._id}${disabled}`, [
        h("td",`${item.firstname}`),
        h("td",`${item.lastname}`),
        h("td",`${item.email}`),

@@ -6,7 +6,6 @@ const h = require('snabbdom/h');
 
 const init = () => ({email: '', firstname: '', lastname: ''})
 const preventDeafult = e => {e.preventDefault(); return e;}
-const emptify = (...list) => list.forEach( c => c.value = "")
 
 // update
 
@@ -16,11 +15,10 @@ const Action = Type({
 const update = Action.caseOn({
   Submit: e => {
     let {email, firstname, lastname} = e.target.elements;
-    let adress = {email: email.value,
+    let data = {email: email.value,
         firstname: firstname.value,
         lastname: lastname.value};
-    emptify( email, firstname, lastname );
-    return adress;
+    return {data, context: [email, firstname, lastname]};
   }
 });
 
@@ -33,18 +31,18 @@ const makeField = ( {id, placeholder, value, error,  icoName = ".user"} ) =>
 				type: "text",
 				form: "form",
 				placeholder,
-			  value }}),
+			  value: value },
+        value: value}),
     h(`i.icon${icoName}`) ]
       )])
 
 const view = ( {submit$},
 		[{email="", firstname="", lastname=""} = {},
 		{emailError = "", firstnameError = "", lastnameError = ""} = {}]
-	) => {
-	return h("div.ui.segment", [
+	) =>  h("div.ui.segment", [
     h("dib.ui.horizontal.divider", "ADD CONTACT"),
     h("form.ui.form",
-      {on: {submit: R.compose(submit$, Action.Submit, preventDeafult)}},
+      {on: {submit: R.compose(submit$, Action.Submit, preventDeafult)}, key:"11111"},
       [	makeField(
   					{id: "#firstname",
             placeholder: "First name",
@@ -70,6 +68,6 @@ const view = ( {submit$},
 				])
 			])
     ])
-}
+
 
 export default { view, init, update, Action }
