@@ -1,10 +1,12 @@
 const R = require('ramda');
 const Type = require('union-type');
 const h = require('snabbdom/h');
-const preventDeafult = e => {e.preventDefault(); return e;}
+
 // model
 
 const init = () => ({email: '', firstname: '', lastname: ''})
+const preventDeafult = e => {e.preventDefault(); return e;}
+const emptify = (...list) => list.forEach( c => c.value = "")
 
 // update
 
@@ -14,9 +16,11 @@ const Action = Type({
 const update = Action.caseOn({
   Submit: e => {
     let {email, firstname, lastname} = e.target.elements;
-    return {email: email.value,
+    let adress = {email: email.value,
         firstname: firstname.value,
-        lastname: lastname.value}
+        lastname: lastname.value};
+    emptify( email, firstname, lastname );
+    return adress;
   }
 });
 
