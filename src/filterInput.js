@@ -21,7 +21,7 @@ const update = Action.caseOn({
 
 const view = ({filter$}) =>
   h("div.ui.segment", [
-    h("dib.ui.horizontal.divider", "SEARCH CONTACT"),
+    h("div.ui.horizontal.divider", "SEARCH CONTACT"),
     h("div.ui.icon.input.fluid", [
       h(`input`, {
         props: {placeholder: "Search", type: "text"},
